@@ -116,26 +116,35 @@
                             <table class="w-full text-xs text-left text-slate-600">
                                 <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
                                     <tr>
-                                        <th class="px-3 py-2">Scenario</th>
-                                        <th class="px-3 py-2">Naming Format</th>
-                                        <th class="px-3 py-2">Example</th>
+                                        <th class="px-3 py-2 whitespace-nowrap w-1/3">Scenario</th>
+                                        <th class="px-3 py-2 whitespace-nowrap">Naming Format</th>
+                                        <th class="px-3 py-2 whitespace-nowrap">Example</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
                                     <tr class="border-b hover:bg-slate-50">
-                                        <td class="px-3 py-2 font-medium text-slate-900">Standard Team</td>
-                                        <td class="px-3 py-2 font-mono text-indigo-600">&lt;Org&gt;-&lt;Space&gt;</td>
-                                        <td class="px-3 py-2 font-mono text-slate-500">platform_services_glb-anthos</td>
+                                        <td class="px-3 py-2 align-top">
+                                            <div class="font-bold text-slate-900">Standard Team</div>
+                                            <div class="text-[10px] text-slate-500 font-normal">One Org, One Space</div>
+                                        </td>
+                                        <td class="px-3 py-2 align-middle font-mono text-indigo-600">&lt;Org&gt;-&lt;Space&gt;</td>
+                                        <td class="px-3 py-2 align-middle font-mono text-slate-500">platform_services_glb-anthos</td>
                                     </tr>
                                     <tr class="border-b hover:bg-slate-50">
-                                        <td class="px-3 py-2 font-medium text-slate-900">Multi-Space Team</td>
-                                        <td class="px-3 py-2 font-mono text-indigo-600">&lt;Org&gt;-&lt;Func&gt;~Support</td>
-                                        <td class="px-3 py-2 font-mono text-slate-500">insurance_uw_us-L2_app~Support</td>
+                                        <td class="px-3 py-2 align-top">
+                                            <div class="font-bold text-slate-900">Multi-Space Team</div>
+                                            <div class="text-[10px] text-slate-500 font-normal">One Org, Many Spaces</div>
+                                        </td>
+                                        <td class="px-3 py-2 align-middle font-mono text-indigo-600">&lt;Org&gt;-&lt;Func&gt;~Support</td>
+                                        <td class="px-3 py-2 align-middle font-mono text-slate-500">insurance_uw_us-L2_app~Support</td>
                                     </tr>
                                     <tr class="hover:bg-slate-50">
-                                        <td class="px-3 py-2 font-medium text-slate-900">Cross-Org Team</td>
-                                        <td class="px-3 py-2 font-mono text-indigo-600">&lt;Func&gt;-Support</td>
-                                        <td class="px-3 py-2 font-mono text-slate-500">Corp_Jira-Support</td>
+                                        <td class="px-3 py-2 align-top">
+                                            <div class="font-bold text-slate-900">Cross-Org Team</div>
+                                            <div class="text-[10px] text-slate-500 font-normal">Many Orgs / No Org</div>
+                                        </td>
+                                        <td class="px-3 py-2 align-middle font-mono text-indigo-600">&lt;Func&gt;-Support</td>
+                                        <td class="px-3 py-2 align-middle font-mono text-slate-500">Corp_Jira-Support</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -204,7 +213,7 @@
                         <div class="text-xs text-slate-500 bg-blue-50 p-2 rounded border border-blue-100">
                             <strong>Rules:</strong>
                             <ul class="list-disc list-inside mt-1 space-y-1">
-                                <li>L# reflects highest escalation level (Steps in EP).</li>
+                                <li>L# reflects highest escalation level.</li>
                                 <li><strong>L4-EP</strong> includes full L1->L4 chain.</li>
                                 <li>Add Org/Space as tags, not in name.</li>
                             </ul>
@@ -217,7 +226,7 @@
                                 oninput="validateInput('ep', this.value)">
                             <div id="icon-ep" class="absolute right-3 top-3.5 text-slate-400"></div>
                         </div>
-                        <p id="hint-ep" class="text-xs text-slate-400 mt-2">Example: Elastic-L4-EP <br> Remember: Do NOT add individual users to EPs, only schedules.</p>
+                        <p id="hint-ep" class="text-xs text-slate-400 mt-2">Remember: Do NOT add individual users to EPs, only schedules.</p>
                     </div>
                 </div>
 
@@ -287,7 +296,7 @@
             'team': "Validate against the scenarios below:",
             'service': "Example: iuu-rqe-rqecoreapp (Use 'bus-spt' for special teams)",
             'schedule': "Example: My_App-L1 or My_App-L2-Backup",
-            'ep': "Example: Elastic-L4-EP <br> Remember: Do NOT add individual users to EPs, only schedules."
+            'ep': "Remember: Do NOT add individual users to EPs, only schedules."
         };
 
         function validateInput(type, value) {
